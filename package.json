@@ -1,0 +1,12 @@
+{
+  "name": "eab-hypnosis",
+  "version": "1.0.0",
+  "description": "EAB Hypnosis — Elizabeth Brager, AEMT, C.HT",
+  "scripts": {
+    "start": "serve . -l $PORT",
+    "dev": "serve . -p 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
