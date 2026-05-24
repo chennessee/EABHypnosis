@@ -271,7 +271,7 @@ h1, h2, h3, h4 {
 }
 .hero-photo-bg {
   position: absolute; inset: 0;
-  background: url('../assets/eb-golden-cover.jpg') center 40% / cover no-repeat;
+  background: url('../assets/eb-hero.jpg') center 35% / cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
