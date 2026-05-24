@@ -186,12 +186,12 @@ h1, h2, h3, h4 {
 .header-logo { flex-shrink: 0; }
 .header-logo img {
   height: 62px; width: auto;
-  border-radius: 50%;
   display: block;
-  transition: box-shadow .3s;
+  transition: filter .3s;
+  filter: invert(1);
 }
 .site-header.transparent .header-logo img {
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.25), 0 2px 12px rgba(0,0,0,0.3);
+  filter: invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.4));
 }
 
 .header-nav { display: flex; align-items: center; gap: 2rem; }
@@ -562,8 +562,8 @@ h1, h2, h3, h4 {
   gap: 3rem; margin-bottom: 3rem;
 }
 .footer-brand img {
-  height: 60px; filter: brightness(0) invert(1);
-  mix-blend-mode: normal; margin-bottom: 1rem;
+  height: 60px; filter: invert(1);
+  margin-bottom: 1rem;
 }
 .footer-tagline {
   font-family: var(--font-display); font-style: italic;
