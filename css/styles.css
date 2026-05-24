@@ -31,7 +31,7 @@
 
   --transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   --max-w: 1200px;
-  --header-h: 88px;
+  --header-h: 100px;
 }
 
 /* ==================== RESET ==================== */
@@ -185,7 +185,7 @@ h1, h2, h3, h4 {
 
 .header-logo { flex-shrink: 0; }
 .header-logo img {
-  height: 62px; width: auto;
+  height: 82px; width: auto;
   display: block;
   transition: filter .3s;
   filter: invert(1);
@@ -265,7 +265,7 @@ h1, h2, h3, h4 {
 
 /* ==================== HERO (HOME PAGE) ==================== */
 .hero {
-  position: relative; min-height: 100vh; min-height: 100svh;
+  position: relative; min-height: 100vh; min-height: calc(var(--vh, 1vh) * 100);
   display: flex; align-items: center; overflow: hidden;
   background: var(--navy);
 }
