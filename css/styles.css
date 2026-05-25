@@ -31,7 +31,7 @@
 
   --transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
   --max-w: 1200px;
-  --header-h: 100px;
+  --header-h: 124px;
 }
 
 /* ==================== RESET ==================== */
@@ -185,7 +185,7 @@ h1, h2, h3, h4 {
 
 .header-logo { flex-shrink: 0; }
 .header-logo img {
-  height: 82px; width: auto;
+  height: 112px; width: auto;
   display: block;
   transition: filter .3s;
   filter: invert(1);
