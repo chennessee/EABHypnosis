@@ -667,11 +667,9 @@ h1, h2, h3, h4 {
   position: relative; overflow: hidden;
   background: url('../assets/eb-25.jpg') center / cover no-repeat;
 }
-.white-paper-section::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(247,241,232,.55) 0%, rgba(247,241,232,.75) 100%);
-}
-.white-paper-section > .container { position: relative; z-index: 1; }
+.white-paper-section .section-label,
+.white-paper-section .section-heading { color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+.white-paper-section .section-label { color: var(--gold-light); }
 
 /* ==================== LANDSCAPE BREAK SECTION ==================== */
 .landscape-break {
