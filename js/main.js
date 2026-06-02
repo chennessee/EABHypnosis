@@ -171,6 +171,72 @@
     });
   }
 
+  // ==================== CONTACT FORM (Web3Forms) ====================
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    var statusEl = document.getElementById('cf-status');
+    var submitBtn = document.getElementById('cf-submit');
+    var submitLabel = submitBtn ? submitBtn.querySelector('.cf-submit-label') : null;
+    var originalLabel = submitLabel ? submitLabel.textContent : 'Send Message';
+
+    function setStatus(msg, kind) {
+      if (!statusEl) return;
+      statusEl.textContent = msg;
+      statusEl.classList.remove('success', 'error');
+      if (kind) statusEl.classList.add(kind);
+    }
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Spam honeypot check
+      var honeypot = contactForm.querySelector('.botcheck');
+      if (honeypot && honeypot.checked) return;
+
+      // Basic native validation
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      var data = new FormData(contactForm);
+
+      // Block submission if access key not yet configured
+      var key = data.get('access_key');
+      if (!key || key === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+        setStatus('Form not yet configured. Please email ebrager@gmail.com directly.', 'error');
+        return;
+      }
+
+      setStatus('');
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Sending…';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+      .then(function (result) {
+        if (result.ok && result.json && result.json.success) {
+          setStatus('Thank you — your message has been sent. Elizabeth will be in touch personally within 1–2 business days.', 'success');
+          contactForm.reset();
+        } else {
+          var msg = (result.json && result.json.message) ? result.json.message : 'Something went wrong sending your message.';
+          setStatus(msg + ' Please try again or email ebrager@gmail.com directly.', 'error');
+        }
+      })
+      .catch(function () {
+        setStatus('Network error — please try again or email ebrager@gmail.com directly.', 'error');
+      })
+      .finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitLabel) submitLabel.textContent = originalLabel;
+      });
+    });
+  }
+
   // ==================== SMOOTH ANCHOR SCROLL ====================
   // Offsets for fixed header so anchors don't hide under it
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
