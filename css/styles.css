@@ -663,7 +663,44 @@ h1, h2, h3, h4 {
 .credential-tag::before { content: '✦'; color: var(--gold); font-size: .58rem; }
 
 /* ==================== WHITE PAPER SECTION ==================== */
-.white-paper-section { background: var(--cream); }
+.white-paper-section {
+  position: relative; background: var(--cream); overflow: hidden;
+}
+.white-paper-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('../assets/eb-25.jpg') center / cover no-repeat;
+  opacity: .18;
+}
+.white-paper-section > .container { position: relative; z-index: 1; }
+
+/* ==================== LANDSCAPE BREAK SECTION ==================== */
+.landscape-break {
+  position: relative; min-height: 55vh;
+  background: url('../assets/eb-valley.jpg') center 40% / cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff; padding: 5rem 0;
+}
+.landscape-break::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(12,18,30,.6) 0%, rgba(12,18,30,.35) 100%);
+}
+.landscape-break .container { position: relative; z-index: 1; }
+.landscape-break-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+  font-style: italic; line-height: 1.4; font-weight: 400;
+  max-width: 800px; margin: 0 auto 1rem;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.landscape-break-cite {
+  display: block; margin-top: 1.25rem;
+  font-family: var(--font-body); font-size: .82rem;
+  font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold-light);
+}
+@media (max-width: 768px) {
+  .landscape-break { background-attachment: scroll; min-height: 45vh; }
+}
 .white-paper-card {
   background: var(--warm-white); border-radius: var(--r-lg);
   overflow: visible; box-shadow: var(--shadow-card);
