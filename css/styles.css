@@ -346,16 +346,16 @@ h1, h2, h3, h4 {
   background: linear-gradient(180deg, rgba(12,18,30,.65) 0%, rgba(12,18,30,.45) 60%, rgba(12,18,30,.55) 100%);
 }
 .page-header.bg-services {
-  background: url('../assets/landscape-clouds.jpg') center / cover no-repeat;
+  background: url('../assets/landscape-sunset.jpg') center / cover no-repeat;
 }
 .page-header.bg-meet {
-  background: url('../assets/eb-valley.jpg') center / cover no-repeat;
+  background: url('../assets/landscape-valley.jpg') center / cover no-repeat;
 }
 .page-header.bg-downloads {
-  background: url('../assets/landscape-misty.jpg') center / cover no-repeat;
+  background: url('../assets/landscape-clouds.jpg') center / cover no-repeat;
 }
 .page-header.bg-contact {
-  background: url('../assets/landscape-autumn.jpg') center 30% / cover no-repeat;
+  background: url('../assets/landscape-misty.jpg') center 30% / cover no-repeat;
 }
 .page-header-title {
   font-family: var(--font-display);
