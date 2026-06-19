@@ -754,7 +754,7 @@ h1, h2, h3, h4 {
 .hero-splash {
   position: relative; overflow: hidden;
   min-height: 100vh; min-height: calc(var(--vh, 1vh) * 100);
-  background: url('../assets/eb-hero.jpg') center 35% / cover no-repeat;
+  background: url('../assets/landscape-autumn.jpg') center / cover no-repeat;
   display: flex; align-items: center; justify-content: center;
   padding-top: var(--header-h);
 }
