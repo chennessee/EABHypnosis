@@ -397,7 +397,21 @@ h1, h2, h3, h4 {
 }
 
 /* ==================== ABOUT SNIPPET ==================== */
-.about-snippet { background: var(--warm-white); }
+.about-snippet {
+  position: relative; overflow: hidden;
+  background: url('../assets/landscape-mountain-vista.jpg') center / cover no-repeat;
+}
+.about-snippet::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
+}
+.about-snippet > .container { position: relative; z-index: 1; }
+.about-snippet .about-content {
+  background: #ebe2cf;
+  padding: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 14px 38px rgba(0,0,0,.22), 0 4px 12px rgba(0,0,0,.12);
+}
 
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -440,7 +454,18 @@ h1, h2, h3, h4 {
 .link-arrow:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); gap: .7rem; }
 
 /* ==================== SERVICES GRID (HOME â€” 3 col) ==================== */
-.services-preview { background: var(--cream); }
+.services-preview {
+  position: relative; overflow: hidden;
+  background: url('../assets/landscape-forest-rocks.jpg') center / cover no-repeat;
+}
+.services-preview::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
+}
+.services-preview > .container { position: relative; z-index: 1; }
+.services-preview .section-label,
+.services-preview .section-heading { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.services-preview .section-label { color: var(--gold-light); }
 
 .services-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
@@ -1050,7 +1075,19 @@ h1, h2, h3, h4 {
 
 
 /* ==================== CONTACT PAGE ==================== */
-.contact-section { background: var(--warm-white); }
+.contact-section {
+  position: relative; overflow: hidden;
+  background: url('../assets/landscape-blue-mountains.jpg') center / cover no-repeat;
+}
+.contact-section::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
+}
+.contact-section > .container { position: relative; z-index: 1; }
+.contact-section .section-label,
+.contact-section .section-heading { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.contact-section .section-label { color: var(--gold-light); }
+.contact-section .contact-intro-text { color: rgba(255,255,255,.92); }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem;
   align-items: start;
@@ -1195,3 +1232,17 @@ h1, h2, h3, h4 {
   text-shadow: 0 1px 3px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35);
   font-weight: 800;
 }
+
+/* Free Downloads cards — landscape backed */
+.downloads-cards-section {
+  position: relative; overflow: hidden;
+  background: url('../assets/landscape-aerial-forest.jpg') center / cover no-repeat;
+}
+.downloads-cards-section::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
+}
+.downloads-cards-section > .container { position: relative; z-index: 1; }
+.downloads-cards-section .section-label,
+.downloads-cards-section .section-heading { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.downloads-cards-section .section-label { color: var(--gold-light); }
