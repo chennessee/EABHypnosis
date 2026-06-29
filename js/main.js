@@ -118,16 +118,29 @@
     }
   });
 
-  // ==================== YOUTUBE PLACEHOLDER ====================
-  document.querySelectorAll('.youtube-embed-wrap iframe').forEach(function (iframe) {
-    if (!iframe.getAttribute('src')) {
-      var wrap = iframe.parentElement;
-      wrap.classList.add('empty-embed');
-      iframe.style.display = 'none';
-      var msg = document.createElement('p');
-      msg.textContent = 'Video coming soon';
-      msg.style.cssText = 'font-family:inherit;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;';
-      wrap.appendChild(msg);
+  // ==================== YOUTUBE DYNAMIC CONTAINER ====================
+  // Hide any iframe wrap with no src. If every iframe in a section is empty,
+  // hide the entire .youtube-section. The moment a real src is added to any
+  // iframe (in the HTML), that wrap + its section re-appear automatically on reload.
+  document.querySelectorAll('.youtube-section').forEach(function (section) {
+    var iframes = section.querySelectorAll('.youtube-embed-wrap iframe');
+    var anyLive = false;
+
+    iframes.forEach(function (iframe) {
+      var src = (iframe.getAttribute('src') || '').trim();
+      var wrap = iframe.closest('.youtube-embed-wrap');
+      if (!src || src === '#') {
+        if (wrap) wrap.style.display = 'none';
+      } else {
+        if (wrap) wrap.style.display = '';
+        anyLive = true;
+      }
+    });
+
+    // If no live videos, collapse the whole section so the visit-channel CTA
+    // and "Watch & Learn" heading don't sit on top of empty placeholders.
+    if (!anyLive) {
+      section.style.display = 'none';
     }
   });
 
