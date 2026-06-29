@@ -358,7 +358,7 @@ h1, h2, h3, h4 {
   background: url('../assets/landscape-clouds.jpg') center / cover no-repeat;
 }
 .page-header.bg-contact {
-  background: url('../assets/landscape-misty.jpg') center 30% / cover no-repeat;
+  background: url('../assets/landscape-autumn.jpg') center 30% / cover no-repeat;
 }
 .page-header-title {
   font-family: var(--font-display);
@@ -634,7 +634,7 @@ h1, h2, h3, h4 {
 /* ==================== MEET ELIZABETH PAGE — COLLAGE ==================== */
 .bio-section {
   position: relative; overflow: hidden;
-  background: url('../assets/landscape-autumn.jpg') center / cover no-repeat;
+  background: url('../assets/landscape-kelly-golden.jpg') center / cover no-repeat;
   padding: 6rem 0;
 }
 .bio-section > .container { position: relative; z-index: 1; }
@@ -714,7 +714,7 @@ h1, h2, h3, h4 {
 /* ==================== WHITE PAPER SECTION ==================== */
 .white-paper-section {
   position: relative; overflow: hidden;
-  background: url('../assets/landscape-aerial-forest.jpg') center / cover no-repeat;
+  background: url('../assets/eb-valley.jpg') center / cover no-repeat;
   padding: 7rem 0;
 }
 .white-paper-section::after {
