@@ -346,7 +346,7 @@ h1, h2, h3, h4 {
 .page-header > .container { position: relative; z-index: 1; }
 .page-header::after {
   content: ''; position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.45) 50%, rgba(3,30,43,.65) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.28) 50%, rgba(3,30,43,.4) 100%);
 }
 .page-header.bg-services {
   background: url('../assets/landscape-blue-mountains.jpg') center / cover no-repeat;
@@ -478,7 +478,7 @@ h1, h2, h3, h4 {
 }
 .services-detail-section::before {
   content: ''; position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
 }
 .services-detail-section > .container { position: relative; z-index: 1; }
 .services-detail-section .section-label,
@@ -643,7 +643,7 @@ h1, h2, h3, h4 {
 }
 .bio-section::before {
   content: ''; position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
 }
 .bio-section > .container { position: relative; z-index: 1; }
 .bio-grid {
@@ -727,7 +727,7 @@ h1, h2, h3, h4 {
 }
 .white-paper-section::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
   pointer-events: none;
 }
 .white-paper-section > .container { position: relative; z-index: 1; }
@@ -744,7 +744,7 @@ h1, h2, h3, h4 {
 }
 .landscape-break::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
 }
 .landscape-break .container { position: relative; z-index: 1; }
 .brand-badge {
@@ -769,7 +769,7 @@ h1, h2, h3, h4 {
 }
 .hero-splash::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
 }
 .hero-splash .brand-badge {
   position: relative; z-index: 1;
@@ -807,7 +807,7 @@ h1, h2, h3, h4 {
 }
 .brand-splash::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.35) 0%, rgba(3,30,43,.22) 100%);
 }
 .brand-splash .brand-badge {
   width: clamp(260px, 38vw, 520px);
