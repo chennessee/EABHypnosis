@@ -9,8 +9,8 @@
 :root {
   /* Forest + slate palette — ink-black, fern, powder-blue */
   --navy:        #031e2b;  /* ink-black (primary dark) */
-  --gold:        #7a9543;  /* fern, brightened for visibility */
-  --gold-light:  #b8d65a;  /* high-contrast lime-fern for landscape overlays */
+  --gold:        #5f7345;  /* fern (primary accent) */
+  --gold-light:  #7a9159;  /* lighter fern for hover */
   --gold-pale:   #c4d0d9;  /* pale-slate (soft accent) */
   --carbon:      #12201a;  /* carbon-black (deepest green) */
   --powder:      #9cc1d6;  /* powder-blue (soft cool accent) */
@@ -641,6 +641,10 @@ h1, h2, h3, h4 {
   background: url('../assets/landscape-kelly-golden.jpg') center / cover no-repeat;
   padding: 6rem 0;
 }
+.bio-section::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
+}
 .bio-section > .container { position: relative; z-index: 1; }
 .bio-grid {
   display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem;
@@ -723,7 +727,7 @@ h1, h2, h3, h4 {
 }
 .white-paper-section::after {
   content: ''; position: absolute; inset: 0;
-  background: rgba(255,255,255,.18);
+  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
   pointer-events: none;
 }
 .white-paper-section > .container { position: relative; z-index: 1; }
@@ -740,7 +744,7 @@ h1, h2, h3, h4 {
 }
 .landscape-break::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(12,18,30,.35) 0%, rgba(12,18,30,.18) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
 }
 .landscape-break .container { position: relative; z-index: 1; }
 .brand-badge {
@@ -765,7 +769,7 @@ h1, h2, h3, h4 {
 }
 .hero-splash::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(12,18,30,.28) 0%, rgba(12,18,30,.1) 40%, rgba(12,18,30,.22) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
 }
 .hero-splash .brand-badge {
   position: relative; z-index: 1;
@@ -803,7 +807,7 @@ h1, h2, h3, h4 {
 }
 .brand-splash::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(12,18,30,.18) 0%, rgba(12,18,30,.08) 100%);
+  background: linear-gradient(180deg, rgba(3,30,43,.55) 0%, rgba(3,30,43,.4) 100%);
 }
 .brand-splash .brand-badge {
   width: clamp(260px, 38vw, 520px);
@@ -870,6 +874,9 @@ h1, h2, h3, h4 {
   line-height: 1.7;
   color: var(--text);
   flex: 1;
+  background: #9cc1d6;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--r-md);
 }
 .testimonial-body p + p { margin-top: 1rem; }
 
