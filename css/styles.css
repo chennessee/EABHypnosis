@@ -9,8 +9,8 @@
 :root {
   /* Forest + slate palette — ink-black, fern, powder-blue */
   --navy:        #031e2b;  /* ink-black (primary dark) */
-  --gold:        #5f7345;  /* fern (primary accent) */
-  --gold-light:  #7a9159;  /* lighter fern for hover */
+  --gold:        #7a9543;  /* fern, brightened for visibility */
+  --gold-light:  #b8d65a;  /* high-contrast lime-fern for landscape overlays */
   --gold-pale:   #c4d0d9;  /* pale-slate (soft accent) */
   --carbon:      #12201a;  /* carbon-black (deepest green) */
   --powder:      #9cc1d6;  /* powder-blue (soft cool accent) */
@@ -1168,4 +1168,19 @@ h1, h2, h3, h4 {
 .services-detail-section {
   border-bottom: 4px solid var(--gold);
   box-shadow: 0 1px 0 rgba(95,115,69,.4), 0 6px 18px rgba(3,30,43,.2);
+}
+
+/* ==================== ACCENT CONTRAST BOOST ==================== */
+/* Section labels and dividers on landscape backgrounds get the lighter */
+/* high-contrast accent + drop shadow so the green pops against busy photos */
+.hero-splash .section-label, .hero-splash .gold-divider-icon,
+.page-header .section-label, .page-header .gold-divider-icon,
+.bio-section .section-label, .bio-section .gold-divider-icon,
+.brand-splash .section-label, .brand-splash .gold-divider-icon,
+.white-paper-section .section-label, .white-paper-section .gold-divider-icon,
+.landscape-break .section-label, .landscape-break .gold-divider-icon,
+.services-detail-section .section-label, .services-detail-section .gold-divider-icon {
+  color: var(--gold-light) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35);
+  font-weight: 800;
 }
