@@ -1259,7 +1259,23 @@ h1, h2, h3, h4 {
 .downloads-cards-section .section-label { color: var(--gold-light); }
 
 /* ==================== MOTION LAYER ==================== */
-/* Static landscape backgrounds — parallax removed for smoother scroll */
+/* Parallax on landscape sections — anchored feel, GPU-hinted */
+@media (min-width: 900px) {
+  .hero-splash,
+  .page-header,
+  .bio-section,
+  .brand-splash,
+  .white-paper-section,
+  .landscape-break,
+  .services-detail-section,
+  .about-snippet,
+  .services-preview,
+  .contact-section,
+  .downloads-cards-section,
+  .testimonials {
+    background-attachment: fixed;
+  }
+}
 
 /* Ken Burns � slow zoom on hero landscape */
 .hero-splash {
