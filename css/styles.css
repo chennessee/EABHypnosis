@@ -1279,14 +1279,12 @@ h1, h2, h3, h4 {
 
 /* Ken Burns � slow zoom on hero landscape */
 .hero-splash {
-  background-size: 118% auto;
-  background-position: center 35%;
-  will-change: background-size;
-  animation: kenBurns 30s ease-in-out infinite alternate;
+  background-size: 110% auto;
+  animation: kenBurns 24s ease-in-out infinite alternate;
 }
 @keyframes kenBurns {
-  0%   { background-size: 118% auto; }
-  100% { background-size: 128% auto; }
+  0%   { background-size: 110% auto; background-position: center 30%; }
+  100% { background-size: 125% auto; background-position: center 40%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-splash { animation: none; }
