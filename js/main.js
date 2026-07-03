@@ -164,7 +164,17 @@
       '.credential-tag',
       '.bio-pull-quote',
       '.patreon-section .section-heading',
-      '.patreon-section .section-subheading'
+      '.patreon-section .section-subheading',
+      '.testimonial-card',
+      '.tagline-strip .tagline-headline',
+      '.landscape-break .brand-badge',
+      '.landscape-break-quote',
+      '.brand-splash .brand-badge',
+      '.contact-form-wrap',
+      '.contact-intro',
+      '.services-preview .section-heading',
+      '.services-detail-section .section-heading',
+      '.downloads-cards-section .section-heading'
     ].join(', ');
 
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -249,6 +259,19 @@
       });
     });
   }
+
+  // ==================== BACK TO TOP ====================
+  var backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.innerHTML = '&uarr;';
+  document.body.appendChild(backToTop);
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  window.addEventListener('scroll', function () {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
 
   // ==================== SMOOTH ANCHOR SCROLL ====================
   // Offsets for fixed header so anchors don't hide under it

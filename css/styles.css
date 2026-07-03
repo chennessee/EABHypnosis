@@ -1246,3 +1246,59 @@ h1, h2, h3, h4 {
 .downloads-cards-section .section-label,
 .downloads-cards-section .section-heading { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
 .downloads-cards-section .section-label { color: var(--gold-light); }
+
+/* ==================== MOTION LAYER ==================== */
+/* Parallax on landscape sections — background stays put while content scrolls */
+@media (min-width: 900px) {
+  .hero-splash,
+  .page-header,
+  .bio-section,
+  .brand-splash,
+  .white-paper-section,
+  .landscape-break,
+  .services-detail-section,
+  .about-snippet,
+  .services-preview,
+  .contact-section,
+  .downloads-cards-section {
+    background-attachment: fixed;
+  }
+}
+
+/* Ken Burns — slow zoom on hero landscape */
+.hero-splash {
+  background-size: 110% auto;
+  animation: kenBurns 24s ease-in-out infinite alternate;
+}
+@keyframes kenBurns {
+  0%   { background-size: 110% auto; background-position: center 30%; }
+  100% { background-size: 125% auto; background-position: center 40%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-splash { animation: none; }
+}
+
+/* Section-level scroll reveal */
+.section-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.section-reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed; right: 1.5rem; bottom: 1.5rem;
+  width: 48px; height: 48px;
+  background: var(--navy); color: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; line-height: 1;
+  cursor: pointer; z-index: 990;
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s ease, background .2s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,.28);
+}
+.back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--gold); border-color: var(--gold-light); }
+@media (max-width: 600px) {
+  .back-to-top { right: 1rem; bottom: 1rem; width: 44px; height: 44px; }
+}
