@@ -804,18 +804,18 @@ h1, h2, h3, h4 {
 
 /* Tagline strip â€” right under the hero splash, holds CTAs */
 .tagline-strip {
-  background: var(--warm-white);
-  padding: 3.5rem 0 4rem;
-  border-bottom: 1px solid rgba(160,145,19,.12);
+  background: var(--navy);
+  padding: 2.5rem 0 3rem;
+  border-bottom: none;
 }
 .tagline-headline {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-  font-weight: 500; color: var(--navy);
+  font-weight: 500; color: #fff;
   line-height: 1.35; margin-bottom: .85rem;
 }
 .tagline-sub {
-  font-size: 1.05rem; color: var(--text-light);
+  font-size: 1.05rem; color: rgba(255,255,255,.75);
   margin-bottom: 1.75rem; line-height: 1.7;
 }
 .tagline-ctas {
@@ -858,7 +858,18 @@ h1, h2, h3, h4 {
 }
 
 /* ==================== TESTIMONIALS ==================== */
-.testimonials { background: var(--warm-white); }
+.testimonials {
+  position: relative; overflow: hidden;
+  background: url('../assets/landscape-clouds.jpg') center / cover no-repeat;
+}
+.testimonials::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
+}
+.testimonials > .container { position: relative; z-index: 1; }
+.testimonials .section-label,
+.testimonials .section-heading { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+.testimonials .section-label { color: var(--gold-light); }
 
 .testimonial-grid {
   display: grid;
@@ -1233,7 +1244,7 @@ h1, h2, h3, h4 {
   font-weight: 800;
 }
 
-/* Free Downloads cards — landscape backed */
+/* Free Downloads cards ï¿½ landscape backed */
 .downloads-cards-section {
   position: relative; overflow: hidden;
   background: url('../assets/landscape-aerial-forest.jpg') center / cover no-repeat;
@@ -1248,7 +1259,7 @@ h1, h2, h3, h4 {
 .downloads-cards-section .section-label { color: var(--gold-light); }
 
 /* ==================== MOTION LAYER ==================== */
-/* Parallax on landscape sections — background stays put while content scrolls */
+/* Parallax on landscape sections ï¿½ background stays put while content scrolls */
 @media (min-width: 900px) {
   .hero-splash,
   .page-header,
@@ -1265,7 +1276,7 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Ken Burns — slow zoom on hero landscape */
+/* Ken Burns ï¿½ slow zoom on hero landscape */
 .hero-splash {
   background-size: 110% auto;
   animation: kenBurns 24s ease-in-out infinite alternate;
