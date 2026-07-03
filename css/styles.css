@@ -1224,7 +1224,12 @@ h1, h2, h3, h4 {
 .brand-splash,
 .white-paper-section,
 .landscape-break,
-.services-detail-section {
+.services-detail-section,
+.about-snippet,
+.services-preview,
+.testimonials,
+.contact-section,
+.downloads-cards-section {
   border-bottom: 4px solid var(--gold);
   box-shadow: 0 1px 0 rgba(160,145,19,.4), 0 6px 18px rgba(45,98,154,.2);
 }
