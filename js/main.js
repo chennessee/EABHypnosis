@@ -118,6 +118,17 @@
     }
   });
 
+  // ==================== PATREON DYNAMIC CONTAINER ====================
+  // Hide .patreon-section while the Patreon link is still a "#" placeholder.
+  // The moment a real URL (e.g. https://patreon.com/...) is dropped into the
+  // href, the section auto-appears on next page load. Same pattern as YouTube.
+  document.querySelectorAll('.patreon-section').forEach(function (section) {
+    var link = section.querySelector('.patreon-link, a.btn');
+    var href = link ? (link.getAttribute('href') || '').trim() : '';
+    var isLive = href && href !== '#' && !href.startsWith('javascript:');
+    if (!isLive) section.style.display = 'none';
+  });
+
   // ==================== YOUTUBE DYNAMIC CONTAINER ====================
   // Hide any iframe wrap with no src. If every iframe in a section is empty,
   // hide the entire .youtube-section. The moment a real src is added to any
