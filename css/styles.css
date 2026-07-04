@@ -14,8 +14,8 @@
   --gold-pale:   #6789b0;  /* dusty-denim (pale accent) */
   --carbon:      #52627d;  /* blue-slate (alt dark) */
   --powder:      #1397e6;  /* blue-bell (vibrant secondary accent) */
-  --cream:       #f4f1e8;
-  --warm-white:  #fbf9f3;
+  --cream:       #f5f5f2;  /* neutral off-white (no warm khaki tint) */
+  --warm-white:  #fbfbf9;
   --text:        #2e2e2e;
   --text-light:  #6b6b6b;
   --text-muted:  #9a9a8a;
@@ -211,8 +211,26 @@ h1, h2, h3, h4 {
   border-bottom: 1.5px solid transparent;
   min-height: 44px; display: flex; align-items: center;
 }
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
   color: var(--gold-light); border-bottom-color: var(--gold-light);
+}
+.nav-link.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+  border-bottom-width: 2px;
+  font-weight: 800;
+}
+.mobile-nav-link.active {
+  color: var(--gold-light);
+  font-weight: 800;
+  position: relative;
+}
+.mobile-nav-link.active::before {
+  content: ''; position: absolute; left: -1rem; top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 60%;
+  background: var(--gold-light);
+  border-radius: 2px;
 }
 .site-header.solid .nav-link,
 .site-header.scrolled .nav-link { text-shadow: none; }
@@ -408,7 +426,7 @@ h1, h2, h3, h4 {
 }
 .about-snippet > .container { position: relative; z-index: 1; }
 .about-snippet .about-content {
-  background: #ebe2cf;
+  background: #eae9e4;
   padding: 2.5rem;
   border-radius: 4px;
   box-shadow: 0 14px 38px rgba(0,0,0,.22), 0 4px 12px rgba(0,0,0,.12);
@@ -512,7 +530,7 @@ h1, h2, h3, h4 {
 .services-detail-section .section-label { color: var(--gold-light); }
 
 .service-card-full {
-  background: #ebe2cf;
+  background: #eae9e4;
   padding: 2rem 2.25rem;
   box-shadow: 0 12px 32px rgba(0,0,0,.22), 0 4px 10px rgba(0,0,0,.14);
   border-radius: 4px;
@@ -946,7 +964,7 @@ h1, h2, h3, h4 {
 }
 
 .white-paper-card {
-  background: #ebe2cf; border-radius: 4px;
+  background: #eae9e4; border-radius: 4px;
   overflow: visible;
   box-shadow:
     0 28px 70px rgba(0,0,0,.4),
@@ -985,7 +1003,7 @@ h1, h2, h3, h4 {
 .download-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .download-card-image {
   width: 100%; aspect-ratio: 4/5; object-fit: contain;
-  background: #ebe2cf;
+  background: #eae9e4;
 }
 .download-card-body { padding: 2rem; }
 .download-card-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
