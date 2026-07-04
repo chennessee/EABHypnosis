@@ -368,9 +368,10 @@ h1, h2, h3, h4 {
   text-shadow: 0 2px 20px rgba(0,0,0,.28);
 }
 .page-header-subtitle {
-  font-size: 1rem; color: rgba(255,255,255,.78);
-  max-width: 580px; margin: 0 auto;
-  font-weight: 300; line-height: 1.78;
+  font-size: 1.05rem; color: #fff;
+  max-width: 640px; margin: 0 auto;
+  font-weight: 400; line-height: 1.78;
+  text-shadow: 0 2px 8px rgba(0,0,0,.7), 0 1px 3px rgba(0,0,0,.6);
 }
 
 /* ==================== PHOTO PLACEHOLDER ==================== */
@@ -873,7 +874,7 @@ h1, h2, h3, h4 {
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 2rem;
   margin: 2.75rem auto 0;
   max-width: 1100px;
