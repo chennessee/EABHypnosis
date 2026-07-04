@@ -983,7 +983,10 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 .download-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.download-card-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.download-card-image {
+  width: 100%; aspect-ratio: 4/5; object-fit: contain;
+  background: #ebe2cf;
+}
 .download-card-body { padding: 2rem; }
 .download-card-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
 .badge {
