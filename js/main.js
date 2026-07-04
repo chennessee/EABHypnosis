@@ -108,11 +108,16 @@
   }
 
   // ==================== ACTIVE NAV LINK ====================
-  var currentFile = window.location.pathname.split('/').pop() || 'index.html';
-  if (currentFile === '') currentFile = 'index.html';
+  // Railway/serve strips .html from production URLs, so normalize both sides.
+  function normalizePath(p) {
+    var name = (p || '').split('/').pop().split('?')[0].split('#')[0];
+    if (!name || name === '') name = 'index';
+    return name.replace(/\.html$/i, '').toLowerCase();
+  }
+  var currentPage = normalizePath(window.location.pathname);
 
   document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
-    if (link.getAttribute('href') === currentFile) {
+    if (normalizePath(link.getAttribute('href')) === currentPage) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
