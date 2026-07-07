@@ -927,7 +927,7 @@ h1, h2, h3, h4 {
   font-style: italic;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--text);
+  color: #fff;
   flex: 1;
   background: #6789b0;
   padding: 1.5rem 1.75rem;
