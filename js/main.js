@@ -259,7 +259,7 @@
       .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
       .then(function (result) {
         if (result.ok && result.json && result.json.success) {
-          setStatus('Thank you — your message has been sent. Elizabeth will be in touch personally within 1–2 business days.', 'success');
+          setStatus('Thank you — your message has been sent. Elizabeth will be in touch personally within 3–4 business days.', 'success');
           contactForm.reset();
         } else {
           var msg = (result.json && result.json.message) ? result.json.message : 'Something went wrong sending your message.';
