@@ -243,7 +243,7 @@
       // Block submission if access key not yet configured
       var key = data.get('access_key');
       if (!key || key === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
-        setStatus('Form not yet configured. Please email ebrager@gmail.com directly.', 'error');
+        setStatus('Form not yet configured. Please email eabhypnosis@gmail.com directly.', 'error');
         return;
       }
 
@@ -263,11 +263,11 @@
           contactForm.reset();
         } else {
           var msg = (result.json && result.json.message) ? result.json.message : 'Something went wrong sending your message.';
-          setStatus(msg + ' Please try again or email ebrager@gmail.com directly.', 'error');
+          setStatus(msg + ' Please try again or email eabhypnosis@gmail.com directly.', 'error');
         }
       })
       .catch(function () {
-        setStatus('Network error — please try again or email ebrager@gmail.com directly.', 'error');
+        setStatus('Network error — please try again or email eabhypnosis@gmail.com directly.', 'error');
       })
       .finally(function () {
         if (submitBtn) submitBtn.disabled = false;
