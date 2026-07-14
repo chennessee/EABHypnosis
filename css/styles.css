@@ -807,12 +807,21 @@ h1, h2, h3, h4 {
 .hero-splash {
   position: relative; overflow: hidden;
   min-height: 100vh; min-height: calc(var(--vh, 1vh) * 100);
-  background: url('../assets/landscape-autumn.jpg') center / cover no-repeat;
+  min-height: 100dvh;
   display: flex; align-items: center; justify-content: center;
   padding-top: var(--header-h);
+  isolation: isolate;
 }
+/* Image layer — cover keeps the landscape filling the section on any aspect ratio.
+   Ken Burns runs on this pseudo via transform (see bottom of file). */
 .hero-splash::before {
-  content: ''; position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background: url('../assets/landscape-autumn.jpg') center / cover no-repeat;
+  will-change: transform;
+}
+/* Blue color overlay above the image */
+.hero-splash::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, rgba(45,98,154,.35) 0%, rgba(45,98,154,.22) 100%);
 }
 .hero-splash .brand-badge {
@@ -1090,7 +1099,12 @@ h1, h2, h3, h4 {
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .download-banner-inner { flex-direction: column; text-align: center; }
-  .download-banner-image { width: 120px; height: 120px; align-self: center; }
+  /* Show full landscape image on mobile (natural 3:2 aspect) so the FREE DOWNLOAD
+     branding on the right isn't cover-cropped away by a square viewport. */
+  .download-banner-image {
+    width: 100%; max-width: 320px; height: auto; aspect-ratio: auto;
+    object-fit: contain; align-self: center;
+  }
   .download-banner-desc { max-width: 100%; }
   .white-paper-card { grid-template-columns: 1fr; }
   .white-paper-image { aspect-ratio: 16/9; max-height: 220px; width: 100%; }
@@ -1304,17 +1318,18 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Ken Burns � slow zoom on hero landscape */
-.hero-splash {
-  background-size: 110% auto;
+/* Ken Burns — slow zoom + pan on hero landscape (runs on the image pseudo so
+   `background-size: cover` is preserved and coverage stays intact on portrait mobile). */
+.hero-splash::before {
   animation: kenBurns 24s ease-in-out infinite alternate;
+  transform-origin: center 40%;
 }
 @keyframes kenBurns {
-  0%   { background-size: 110% auto; background-position: center 30%; }
-  100% { background-size: 125% auto; background-position: center 40%; }
+  0%   { transform: scale(1.08) translateY(-1%); }
+  100% { transform: scale(1.22) translateY(1.5%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-splash { animation: none; }
+  .hero-splash::before { animation: none; transform: scale(1.05); }
 }
 
 /* Section-level scroll reveal */
